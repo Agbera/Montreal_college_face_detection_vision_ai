@@ -38,7 +38,7 @@ def uploadToGCS(faces, file_name):
     f.write(str(faces))
     f.close()
 
-    face_bucket = storage_client.bucket("classdemo-1")
+    face_bucket = storage_client.bucket("cloudstorage-output")
     uploadfilename =  file_name + "-res.txt"
     new_blob = face_bucket.blob(uploadfilename)
     new_blob.upload_from_filename(temp_local_filename)
